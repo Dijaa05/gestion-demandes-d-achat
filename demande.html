@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion Demandes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="./demande.css">
+</head>
+<body>
+
+  <h1 id="titre">Gestion des Demandes d'Achat</h1>
+
+  <form id="demandeForm">
+    <input type="hidden" id="numeroDO">
+
+    <label>Date besoin :</label>
+    <input type="date" id="dateBesoin" required><br><br>
+
+    <label>Demandeur :</label>
+    <input type="text" id="demandeur" required><br><br>
+
+    <label>Ligne :</label>
+    <select id="ligne" required>
+      <option value="">--Choisir--</option>
+      <option value="KEL1">KEL1</option>
+      <option value="KE31">KE31</option>
+      <option value="KE72">KE72</option>
+      <option value="KE73">KE73</option>
+      <option value="AVO">AVO</option>
+      <option value="ALL">ALL</option>
+    </select><br><br>
+
+    <label>Machine :</label>
+    <select id="machine" name="machine" required>
+      <option value="">-- Sélectionnez une machine --</option>
+    </select><br><br>
+
+    <label>Description :</label>
+    <input type="text" id="description"><br><br>
+
+    <label>Désignation :</label>
+    <input type="text" id="designation"><br><br>
+
+    <label>Quantité :</label>
+    <input type="number" id="quantite" required><br><br>
+
+    <label>Criticité :</label>
+    <select id="criticite" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select><br><br>
+
+    <label>Photo :</label>
+    <input type="file" id="photo" accept="image/*"><br><br>
+
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <h2>Tableau des demandes</h2>
+  <button id="exportExcel">Exporter Excel</button>
+  <table id="tableDemandes" border="1">
+    <thead>
+      <tr>
+        <th>Numéro DO</th>
+        <th>Date besoin</th>
+        <th>Demandeur</th>
+        <th>Ligne</th>
+        <th>Machine</th>
+        <th>Description</th>
+        <th>Désignation</th>
+        <th>Quantité</th>
+        <th>Criticité</th>
+        <th>Photo</th>
+        <th>Statut</th>
+        <th>Supprimer</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="demande.js"></script>
+</body>
+</html>
